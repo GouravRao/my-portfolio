@@ -1,0 +1,20 @@
+/* src/index.css */
+html, body, #root { height: 100%; }
+body { margin: 0; color: white; font-family: system-ui, Arial, sans-serif; }
+/* Wrapper controls mouse events; content sits above the background */
+.reactive-bg-wrapper { position: relative; min-height: 100vh; overflow: hidden; }
+/* The actual background (behind content), controlled by CSS vars --x, --y, --hue */
+.reactive-bg {
+ position: absolute;
+ inset: 0;
+ z-index: 0;
+ background:
+   radial-gradient(600px at var(--x, 50%) var(--y, 50%),
+     hsl(var(--hue, 220) 90% 60% / 0.6),
+     transparent 60%),
+   linear-gradient(120deg,
+     hsl(calc(var(--hue, 220) + 40) 60% 12%),
+     hsl(calc(var(--hue, 220) - 40) 60% 8%));
+ transition: background 200ms ease;
+}
+.reactive-content { position: relative; z-index: 1; }
