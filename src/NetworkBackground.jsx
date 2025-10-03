@@ -7,7 +7,7 @@ export default function NetworkBackground({
  hoverRepelRadius = 120,
  hoverRepelStrength = 0.035,
  clickSpawn = 8,
- bg = "#0b1220",
+ bg = "#000000",
  nodeColor = "#9ecbff",
  linkColor = "#64b5ff",
 }) {
